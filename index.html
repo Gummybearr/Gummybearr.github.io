@@ -37,72 +37,49 @@
                 color:black;
                 text-shadow: 1px 1px 1px;
             }
-            div#explanation a img#explanationimg{
+
+            div a img{
                 width: 100%;
                 height: 400px;
                 object-fit:cover;
+                filter:brightness(60%);
                 margin-bottom: 0px;
                 padding-bottom: 0px;
             }
-            div#explanation a img#explanationimg:hover{
+            div a img:hover{
                 opacity:0.9;
                 transition-duration: 0.2s;
+            }           
+            div a div{
+                position: absolute;
+                width:30%;
+                height:20%;
+                left: 35%;
+                align-self: center;
+                border: 6px solid white;
+                font: 30px arial, sans-serif;
+                text-align: center;
+                padding-top: 5%;
+                color: white; 
             }
-            div#dfs a img#dfsimg{
-                width:100%;
-                height:500px;
-                filter:brightness(50%);
-                object-fit:cover;
-                margin-bottom: 0px;
+            div#explanation a div{
+                top: 300px;
             }
-            div#dfs a img#dfsimg:hover{
-                opacity:0.9;
-                transition-duration: 0.2s;
+            div#dfs a div{
+                top: 700px;
             }
-            div#bfs a img#bfsimg{
-                width: 100%;
-                height:500px;
-                filter:brightness(50%);
-                object-fit:cover;
-                margin-bottom:0px;
+            div#bfs a div{
+                top: 1100px;
             }
-            div#bfs a img#bfsimg:hover{
-                opacity:0.9;
-                transition-duration: 0.2s;
+            div#simulation a div{
+                top:1510px;
             }
-            div#simulation a img#simulationimg{
-                width:100%;
-                height:500px;
-                filter:brightness(50%);
-                object-fit:cover;
-                margin-bottom:0px;
-            } 
-            div#simulation a img#simulationimg:hover{
-                opacity:0.9;
-                transition-duration: 0.2s;
-            } 
-            div#implementation a img#implementationimg{
-                width:100%;
-                height:500px;
-                filter:brightness(50%);
-                object-fit:cover;
-                margin-bottom:0px;
-            } 
-            div#implementation a img#implementationimg:hover{
-                opacity:0.9;
-                transition-duration: 0.2s;
-            } 
-            div#tips a img#tipsimg{
-                width:100%;
-                height:500px;
-                filter:brightness(50%);
-                object-fit:cover;
-                margin-bottom:0px;
-            } 
-            div#tips a img#tipsimg:hover{
-                opacity:0.9;
-                transition-duration: 0.2s;
-            } 
+            div#implementation a div{
+                top:1910px;
+            }
+            div#tips a div{
+                top:2320px;
+            }
         </style>
     </head>
     <body>
@@ -122,37 +99,49 @@
         <div id="explanation">
             <a href="Gummybearr.github.io/explanation.html">
                 <img src="https://www.artibeus.com/wp-content/uploads/2018/05/computer-software-featured-image.jpg" id="explanationimg" />
-                <p id="explanation">SW certificate A?</p>
+                <div id="sub">
+                    <p id="explanation">SW certificate A?</p>
+                </div>
             </a>
         </div>
         <div id="dfs">
             <a href="Gummybearr.github.io/dfs.html">
                 <img src="https://raw.githubusercontent.com/Gummybearr/Gummybearr.github.io/master/dfsimg.jpg" id="dfsimg" />
-                <p id="dfs">dfs</p>
+                <div id="sub">
+                    <p id="dfs">dfs</p>
+                </div>
             </a>
         </div>
         <div id="bfs">
             <a href="Gummybearr.github.io/bfs.html">
                 <img src="https://raw.githubusercontent.com/Gummybearr/Gummybearr.github.io/master/bfsimg.jpg" id="bfsimg" />
-                <p id="bfs">bfs</p>
+                <div id="sub">
+                    <p id="bfs">bfs</p>
+                </div>
             </a>
         </div>
         <div id="simulation">
             <a href="Gummybearr.github.io/simulation.html">
                 <img src="https://thenypost.files.wordpress.com/2017/10/171003-computer-simulation-02.jpg?quality=90&strip=all&strip=all" id="simulationimg" />
-                <p id="simulation">시뮬레이션</p>
+                <div id="sub">
+                    <p id="simulation">시뮬레이션</p>
+                </div>
             </a>
         </div>
         <div id="implementation">
             <a href="Gummybearr.github.io/simulation.html">
                 <img src="https://newintelligence.ca/wp-content/uploads/2017/06/DW-Implementation-Blog.jpeg" id="implementationimg" />
-                <p id="implementation">구현</p>
+                <div id="sub">
+                    <p id="implementation">구현</p>
+                </div>
             </a>
         </div>
         <div id="tips">
             <a href="Gummybearr.github.io/simulation.html">
                 <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lego-pieces-are-seen-at-the-annual-london-model-engineering-news-photo-1084546964-1548274912.jpg" id="tipsimg" />
-                <p id="tips">C++ STL tips</p>
+                <div id="sub">
+                    <p id="tips">C++ STL tips</p>
+                </div>
             </a>
         </div>
 
