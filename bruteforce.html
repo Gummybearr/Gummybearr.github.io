@@ -83,12 +83,12 @@
             div#content img#droplet{
                 filter:brightness(90%);
             }
-            div#content img#bfsq{
+            div#content img#bruteforceq{
                 width:100%;
                 height:100%;
                 filter: brightness(100%);
             }
-            div#content img#dfsa{
+            div#content img#bruteforcea{
                 width:100%;
                 height:100%;
                 filter: brightness(100%);
@@ -124,17 +124,17 @@
         <div id="bruteforce">
             <img src="https://cdn.comparitech.com/wp-content/uploads/2018/05/brute-force.jpg" id="simulimg" />
             <div id="sub">
-                <p id="bruteforce">Brute Force</p>
+                <p id="bruteforce">브루트 포스</p>
             </div>
         </div>
         <div id="content">
             <hr style="border: 1px solid black; background-color: black;"/>
             <h2>목차</h2>
             <ol>
-                <li>브루트포스란?</li>
-                <li>브루트포스 문제를 출제하는 이유</li>
+                <li>브루트 포스란?</li>
+                <li>브루트 포스 문제를 출제하는 이유</li>
                 <li>프루트포스를 이용하여 풀 수 있는 문제</li>
-                <li>브루트포스의 구현과 주의사항</li>
+                <li>브루트 포스의 구현과 주의사항</li>
             </ol>
             <br/>
             <hr style="border: 1px solid black; background-color: black;"/>
@@ -145,64 +145,61 @@
             <p>-본 게시물은 웹 프로그래밍 실습의 중간 대체과제로 제작된 것으로, 본 블로그 만을 통해 삼성 SW 역량테스트를 준비하는 것을 권하지 않습니다.</p>
             <br/>
             <br/>
-            <h2>1. 브루트포스(Brute-Force)란?</h2>
+            <h2>1. 브루트 포스(Brute-Force)란?</h2>
             <img src="https://www.sumydesigns.com/wp-content/uploads/2014/01/bruteforce.jpeg" id="swcertimg">
             <br/>
             <p>
                 3자리 비밀번호로 열리는 자물쇠를 2시간 안에 열어야 할 때, 가장 마지막에 할 수 있는 방법은 무엇일까요? 아마 000부터 999까지 모든 경우의 수를
-                대입해보는 것입니다. 브루트포스란 <span><strong>말 그대로, 모든 경우의 수</strong></span>를, 어떻게 보면 가장 원시적인 방법으로 시도하는 것입니다.
+                대입해보는 것입니다. 브루트 포스란 <span><strong>말 그대로, 모든 경우의 수</strong></span>를, 어떻게 보면 가장 원시적인 방법으로 시도하는 것입니다.
             </p>    
             <br/>
-            <h2>2. 브루트포스 문제를 출제하는 이유</h2>
+            <h2>2. 브루트 포스 문제를 출제하는 이유</h2>
             <img src="https://sci-highs.com/wp-content/uploads/2018/10/roll-the-dice-1502706-1.jpg" id="droplet">
             <p>
-                브루트포스 알고리즘은 삼성 SW 역량시험 A형에서 DFS, BFS 다음으로 자주 출제되는 문제 유형 중 하나인데요, 브루트포스 문제는 DFS와 BFS와 비교할 때
-                조금 더 신중한 접근이 필요하고, 따라서 비교적 더욱 까다로운 문제입니다. 시험에서는 브루트포스 문제를 출제함으로써 응시자가 다음과 같은 능력이 있는지 
-                확인할 수 있습니다.
+                브루트 포스 알고리즘은 삼성 SW 역량시험 A형에서 DFS, BFS 다음으로 자주 출제되는 문제 유형 중 하나인데요, 브루트 포스 문제는 DFS와 BFS와 비교할 때
+                조금 더 신중한 접근이 필요하고, 출제되는 난이도는 비교적 낮지만 실수하기 쉬운 문제입니다. 시험에서는 브루트 포스 문제를 출제함으로써 응시자가 
+                다음과 같은 능력이 있는지 확인할 수 있습니다.
             </p>
             <ol>
-                <li>반복되는 패턴을 발견할 수 있는 능력</li>
-                <li>왜 DFS가 아닌 BFS를 선택해야 하는지 판단하는 능력</li>
-                <li>문제 해결에 적합한 자료구조를 고르는 능력</li>
+                <li>최악의 경우 총 몇번의 연산을 해야 문제를 풀 수 있는지 계산할 수 있는 능력</li>
+                <li>문제 해결에 적합한 논리흐름을 구상하는 능력</li>
                 <li>생각을 코드로 나타낼 수 있는 능력</li>
             </ol>
             <p>
-                다시 말해, <span><strong style="color: blue">문제에서 어떠한 조건이 만족 되었을 때 어떠한 주기를 두고 반복이 발생하는지, 또 반복을 언제 끝내야 하는지</strong></span>를 
-                포착해야 문제를 해결할 수 있다는 말입니다. 일반적으로 DFS가 아닌 BFS를 사용하는 이유는 BFS가 DFS에 비해 두 지점 사이의 거리가 일정할 떄에 최단거리를 더 빨리 구할 수 있기 때문입니다.
-                DFS는 하나의 경우를 끝까지 탐색하기 때문에 최단거리를 구하기 위해서는 모든 항을 살펴봐야 하지만, <span><strong>BFS는 최단거리가 나오는 즉시 반복을 종료할 수 있고, 따라서 
-                <span><strong style="color: blue">더욱 짧은 시간 내에 문제를 해결</strong></span>할 수 있습니다.</strong></span>
+                다시 말해, <span><strong style="color: blue">최대 몇 번의 시도를 하면 문제를 해결 할 수 있고, 모든 시도를 제한 시간 내에 할 수 있음을 알아챌 수 
+                있어야 </strong></span>문제를 해결할 수 있다는 말입니다. 컴퓨터가 <span><strong>1초에 약 1억번의 연산</strong></span>을 할 수 있음을 알고, 
+                제한시간 내에 <span><strong>논리적 허점이 없이</strong></span> 모든 경우의 수를 고려하는 방법을 고안하는 것이 문제 해결의 핵심입니다. 브루트 포스 알고리즘의 경우 잘못 고안할 경우
+                디버깅에 유난히 시간이 많이 걸리기 때문에 바로 코드를 치기보다는 <span><strong>설계를 더욱 신중하게 하는 것이 중요</strong></span>합니다.
             </p>
             <br/><br/><br/>
-            <h2>3. BFS를 이용하여 풀 수 있는 문제</h2>
-            <img src="bfsq.jpg" id="bfsq">
+            <h2>3. 브루트 포스를 이용하여 풀 수 있는 문제</h2>
+            <img src="bruteforceq.jpg" id="bruteforceq">
             <p>
-                이 문제는 지점 간의 거리가 일정할 때 시작점에서 목표 지점까지 가는 최단 거리를 물어봅니다. DFS를 사용하여 풀어도 풀 수는 있지만, <span><strong>최단 거리만 구하면 됨으로 BFS를 사용    
-                </strong></span>하여야 제한 시간 내에 문제를 해결할 수 있습니다. 
-            </p>
-            <p>이 문제에서 <span><strong>반복되는 행위는 시작점에서의 거리를 구하는 일</strong></span>이고, <span><strong>반복은 최단거리를 구하는 시점에 종료</strong></span>됩니다.</p>
-            <p>이 문제에 사용해야 하는 자료구조는 <span><strong style="color: blue">큐</strong></span>입니다. <span><strong>거리를 1씩 더해가면서 <span><strong>가장 짧은 거리</strong></span>
-                를 구하기만 하면 되기 때문입니다. 
+                이 문제는 9명의 난쟁이 중 백설공주의 일곱 난쟁이를 찾는 문제입니다. 일곱 난쟁이들의 키의 합이 100이라고 하였으므로 모든 경우의 수를 고려하여, 키의 합이 100이 나오는 
+                순간 난쟁이들의 키를 출력하면 됩니다. 이 문제는 9명 난쟁이의 키의 합에서 2명의 난쟁이 키를 빼는 방법으로 구할 때 <span><strong>최악의 경우 9C2, 즉 36번의 비교를 하게 됩니다.                    
+                제한시간인 <span><strong style="color: blue">2초, 즉 2억번의 연산 내에 해결할 수 있습니다.</strong></span></strong></span> 
             </p>
 
             <br/><br/><br/>
-            <h2>4. BFS의 구현과 주의사항</h2>
-            <img src="bfsa.jpg" id="dfsa">
-            <p>BFS문제를 풀 때에 주의해야 할 점은 세 가지입니다</p>
+            <h2>4. 브루트 포스의 구현과 주의사항</h2>
+            <img src="bruteforcea.jpg" id="bruteforcea">
+            <p>브루트 포스 문제를 풀 때에 주의해야 할 점은 세 가지입니다</p>
             <ul>
-                <li>BFS로 풀 수 있는 문제인가</li>
-                <li>중복을 어떻게 처리할 것인가</li>
-                <li>모든 항을 꼭 검사해야 하는가</li>
+                <li>브루트 포스로 풀 수 있는 문제인가</li>
+                <li>모든 경우의 수를 고려하였는가</li>
+                <li>실제로 모든 항을 꼭 검사해야 하는가</li>
             </ul>
             <p>
-                가장 우선적으로 고려해야 할 점은 정말 이 문제가 BFS로 풀 수 있는 문제인지 확인하는 것입니다. 예를 들어, <span><strong style="color:red">한 지점에서 다른 지점까지 가는 거리가 모두 다를 경우</strong></span>, 
-                BFS로 문제를 풀기 어렵습니다.</strong></span>      
+                가장 우선적으로 고려해야 할 점은 정말 이 문제가 브루트 포스로 풀 수 있는 문제인지 확인하는 것입니다. 예를 들어, <span><strong>제한 시간이 2초인데 약 3억번의 연산이 필요한 문제는 
+                브루트 포스로 풀 수 없는 문제입니다.</strong></span>
             </p>
             <p>
-                BFS문제를 풀 때에는 중복을 허용해야 하는 경우가 종종 있습니다. <span><strong>이미 방문하였던 영역이라 하더라도 더 나은 조건으로 방문할 수 있을 경우에는 방문해야 합니다.</strong></span>
+                브루트 포스 문제에서 가장 오답이 많이 발생하는 이유는 모든 경우의 수를 고려하지 않아서입니다. 모든 문제가 그렇지만, <span><strong>브루트 포스 문제는 <span><strong style="color: red">
+                특히 </strong></span>입력 조건을 만족하는 범위 내에서의 모든 입력을 고려해야 합니다.</strong></span>
             </p>
             <p>
-                다음으로, 문제에 따라 일부 항을 뛰어 넘어야 될 수 있습니다. <span><strong>모든 항을 검사할 필요가 없는 문제의 경우</strong></span>에는 문제의 조건을 충족하지 않는 영역을 뛰어넘어야 제한 시간 내에 문제를 
-                풀 수 있는 경우가 있습니다.
+                마지막으로, <span><strong style="color: red">논리적인 허점이 없다면</strong></span> 문제에 따라 일부 항을 뛰어 넘어야 될 수 있습니다. <span><strong>모든 항을 검사할 필요가 없는 문제의 경우</strong></span>에는 문제의 조건을 충족하지 
+                않는 영역을 뛰어넘어야 제한 시간 내에 문제를 풀 수 있는 경우가 있습니다.
             </p>
             <br/>
             
