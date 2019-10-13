@@ -78,14 +78,14 @@
             div#content img{
                 width:100%;
                 height:250px;
-                object-fit: cover;
+                object-fit:fill;
             }
             div#content img#droplet{
                 filter:brightness(90%);
             }
-            div#content img#implementationq{
+            div#content img#reference{
                 width:100%;
-                height:100%;
+                height:250px;
                 filter: brightness(100%);
             }
             div#content img#implementationa{
@@ -122,7 +122,7 @@
 
         <hr/>
         <div id="tips">
-            <img src="https://newintelligence.ca/wp-content/uploads/2017/06/DW-Implementation-Blog.jpeg" id="simulimg" />
+            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lego-pieces-are-seen-at-the-annual-london-model-engineering-news-photo-1084546964-1548274912.jpg" id="tipsimg" />
             <div id="sub">
                 <p id="tips">Tips</p>
             </div>
@@ -131,10 +131,9 @@
             <hr style="border: 1px solid black; background-color: black;"/>
             <h2>목차</h2>
             <ol>
-                <li>구현이란?</li>
-                <li>구현 문제를 출제하는 이유</li>
-                <li>구현하여 풀 수 있는 문제</li>
-                <li>코드 구현과 주의사항</li>
+                <li>알고리즘 문제를 효율적으로 푸는 방법</li>
+                <li>C++로 문제를 풀 때 유용한 헤더</li>
+                <li>참고하기 좋은 블로그</li>
             </ol>
             <br/>
             <hr style="border: 1px solid black; background-color: black;"/>
@@ -145,60 +144,64 @@
             <p>-본 게시물은 웹 프로그래밍 실습의 중간 대체과제로 제작된 것으로, 본 블로그 만을 통해 삼성 SW 역량테스트를 준비하는 것을 권하지 않습니다.</p>
             <br/>
             <br/>
-            <h2>1. 구현이란?</h2>
-            <img src="https://itsconstruction.co.uk/wp-content/uploads/2019/07/AdobeStock_172822830.jpg" id="swcertimg">
+            <h2>1. 알고리즘 문제를 효율적으로 푸는 방법</h2>
+            <img src="https://d2wvmrjymyrujw.cloudfront.net/media/uploads/gallery/49706/Algorithm_009.jpg" id="swcertimg">
             <br/>
-            <p>
-                구현은 어찌보면 가장 간단한 문제 유형입니다. <span><strong>문제가 시키는대로, 문제에 제시되어있는 논리적 흐름대로 </strong></span>코드를 짜면 되기 때문입니다. 다소 까다로운 흐름의
-                문제들이 종종 출제되지만 침착하게 하나씩 이해하고, 이해한 바를 코드로 옮긴다면 충분히 풀 수 있는 유형입니다. 
-            </p>    
-            <br/>
-            <h2>2. 구현 문제를 출제하는 이유</h2>
-            <img src="https://miro.medium.com/max/3200/1*yHQOVPYWwP6vfgMPuwMILA@2x.jpeg" id="droplet">
-            <p>
-                구현하는 문제는 실생활에 가장 많이 적용할 수 있는 분야이고, 따라서 코딩 테스트에서도 변별력있게 내기 좋은 분야입니다. 구현하는 문제를 통해 
-                응시자들이 다음과 같은 능력을 갖추었는지 확인할 수 있습니다.
-            </p>
-            <ol>
-                <li>문제를 정확하게 이해하는 능력</li>
-                <li>이해한 바를 바탕으로 공간적,추상적 사고를 할 수 있는 능력</li>
-                <li>수학적 사고 능력</li>
-                <li>생각을 코드로 나타낼 수 있는 능력</li>
-            </ol>
-            <p>
-                다시 말해, <span><strong style="color: blue">문제를 수학적으로 이해하고 공간,추상적인 개념을 결합하여 코드로 나타낼 수 있는지 </strong></span>묻는 것입니다. 
-                흔히 배우는 수학 공식이 나오는 것은 물론, "스도쿠", "오목"과 같은 게임을 무조건 이기는 방법을 구현하는 문제가 나오기도 합니다. 코딩 대회에서도 고난도 유형으로 자주 출제되지만,
-                삼성 역량테스트 <span><strong>A형에서 고난도의 구현문제가 출제되지는 않습니다.</strong></span> 
-            </p>
-            <br/><br/><br/>
-            <h2>3. 구현하여 풀 수 있는 문제</h2>
-            <img src="implementationq.jpg" id="implementationq">
-            <p>
-                상근이는 알람을 45분 일찍 맞추려고 한다는 조건과 1시간이 60분, 1일은 24시간이라는 점을 고려하여 문제를 풀어야 합니다.  
-            </p>
-
-            <br/><br/><br/>
-            <h2>4. 코드 구현과 주의사항</h2>
-            <img src="implementationa.jpg" id="implementationa">
-            <p>구현 문제를 풀 때에 주의해야 할 점은 세 가지입니다</p>
             <ul>
-                <li>구현으로 풀 수 있는 문제인가</li>
-                <li>문제를 제대로 이해하였는가</li>
-                <li>구현한 알고리즘이 제한시간 내에 동작하는가</li>
+                <li>자료구조, 알고리즘에 대한 지식이 있을 때 도전하기</li>
+                <li>한 문제를 2시간 이상 붙잡고 있지 말기</li>
+                <li>모르는 문제의 해설을 확인한 뒤에는 스스로의 힘으로 다시 풀어보기</li>
+                <li>비슷한 유형의 문제를 여러 개 풀면서 다양한 유형에 익숙해지기</li>
             </ul>
             <p>
-                가장 우선적으로 고려해야 할 점은 정말 이 문제가 어떤 구현으로 풀 수 있는 문제인지 확인하는 것입니다. 예를 들어, <span><strong>주어진 점들을 이어서 가장 교차점이
-                많은 볼록 다각형을 구하라는 문제는 <span><strong style="color: red">단순 구현 만으로 풀 수 있는 문제는 아닙니다.</strong></span></strong></span>
+                알고리즘 문제를 푸는 것은 <span><strong>수학문제를 푸는 것과 크게 다르지 않습니다.</strong></span> 기본기가 부족한 상태에서는 문제를 풀면서도 
+                이게 무슨 어떤 문제이고 어떤 점에서 좋은 문제인지 알지 못하며, 문제를 풀더라도 조금만 변형된 유형이 나오면 무너지고 맙니다.
+            </p>    
+            <p>
+                가장 먼저, 기본 배경지식이 없다면 섣불리 도전하지 말아야 합니다. 알고리즘 문제를 풀기 위해서는 알고리즘을 공부해야 하고, 알고리즘을 공부하기 위해서는
+                자료구조를 공부해야 하고 자료구조를 공부하기 위해서는 프로그래밍 언어를 1개 이상 알아야 합니다. <span><strong>선수 과목에 대한 지식이 없이는 학업 
+                능률의 효율적 향상을 기대하기 어렵습니다. </strong></span>
             </p>
             <p>
-                구현 문제의 가장 중요한 핵심은 문제를 정확하게 이해하는 것입니다. 여러 가지 규칙이 적용된 경우에도 헷갈리지 않고 결과값을 추론해낼 수 있어야 합니다.
+                한 문제를 2시간 이상 잡고 있는 것 또한 비효율적입니다. 알고리즘 문제를 푸는데에는 시간이 많이 걸리지 때문에, A형 수준의 문제를 2시간 이상 풀고 있는 것은
+                시간을 비효율적으로 사용하는 것입니다. 빠르게 포기하고, 좋은 풀이를 참고하는 것이 효율적으로 실력을 쌓을 수 있는 길입니다.
             </p>
             <p>
-                마지막으로, 문제에서 요구한 방법대로 구현하였을 때 제한시간 내에 동작하는지 확인해야 합니다. 일부 문제의 경우 <span><strong style="color: red">중복되는 과정들을 제거하지 않으면 시간초과</strong></span>가 나기 때문에
-                코드를 구현하기 전 구현할 코드의 흐름을 다듬을 필요가 있습니다. 예를 들어 1에서 10만의 범위를 가지는 수 10개가 소수인지 아닌지 알아내라는 문제가 있을 때는 입력이 있을
-                때마다 <span><strong>일일히 소인수분해를 하는 방법으로 문제를 풀 수 없습니다</strong></span>. 먼저 <span><strong>에라토스테네스의 체를 사용</strong></span>하여 수를 거른 뒤에 입력값들이 소수인지 여부를 판단해야 합니다. 
+                모르는 문제의 풀이를 찾아본 후에는 <span><strong style="color: red">꼭!!</strong></span> 스스로의 힘으로 다시 풀어봐야 합니다. 풀이를 복습할 수 있을 뿐만 아니라 구현력을 키우는 아주 좋은 방법입니다.
             </p>
+            <p>
+                비슷한 유형의 문제를 많이 풀어보는 것 또한 중요합니다. 알고리즘을 사용할 수 있는 다양한 예시를 익히는 것을 통해 심화 알고리즘을 학습하고, 시간, 공간적으로
+                우수한 풀이를 만들어나갈 수 있는 지름길이기 때문입니다. 
+            </p>
+
             <br/>
+            <h2>2. C++로 문제를 풀 때에 유용한 헤더</h2>
+            <img src="https://www.parasoft.com/sites/default/files/styles/header_bg_xl/public/2019-02/Parasoft_Covers_Web_C%2B%2BCaps_1.jpg?itok=2KkxEvde" id="droplet">
+            <p>
+                사람들이 알고리즘 문제를 풀 때 가장 많이 사용하는 언어는 C++입니다. 속도가 빠르고 다양한 헤더파일을 사용하여 복잡한 연산도 간결하게 표현할 수 있기 때문인데요, 
+                알고리즘 문제 풀이에서 가장 많이 쓰이는 헤더파일과 간단한 설명, 그리고 포함된 기능을 몇가지 소개하고자 합니다. <span><strong style="color: blue">직접 사용해보세요!</strong></span>
+            </p>
+            <ol>
+                <li>algorithms - 기본 정렬 및 비교, 상/하한 선언 - sort, max, min, upper_bound, lower_bound</li>
+                <li>stack - 자료구조 스택 - push, pop, top</li>
+                <li>vector - 스택의 확장판, top이 아닌 요소에 접근이 가능하다 - push_back, erase, insert</li>
+                <li>queue - 자료구조 큐 - 우선순위 큐를 통해 러닝 타임을 절약할 수 있다</li>
+                <li>maps - 자료구조 딕셔너리 - 자료의 키값과 밸류값이 필요한 문제에서 유용하게 쓰인다</li>
+                <li>set - 자료구조 이진트리 - 중복확인을 하는데 유용하게 쓰인다</li>
+            </ol>
+            <br/><br/><br/>
+            <h2>3. 참고하기 좋은 블로그</h2>
+            <img src="https://mabusagency.com/wp-content/uploads/2015/06/Shoulders-of-Giants-01-1.jpg" id="reference">
+            <p>알고리즘을 공부할 때에 많은 도움이 됐던 블로그입니다. </p>
+            <ul>
+                <li><a href="https://baactree.tistory.com/notice/16">https://baactree.tistory.com/notice/16</a></li>
+                <li><a href="https://plzrun.tistory.com/">https://plzrun.tistory.com/</a></li>
+                <li><a href="https://www.crocus.co.kr/341">https://www.crocus.co.kr/341</a></li>
+                <li><a href="https://blog.encrypted.gg/">https://blog.encrypted.gg/</a></li>
+                <li><a href="https://jaimemin.tistory.com/">https://jaimemin.tistory.com/</a></li>
+            </ul>
+
+            <br/><br/><br/><br/>
             
             <br/><br/><br/><br/>
             <hr style="border: 1px solid black; background-color: black;"/>
